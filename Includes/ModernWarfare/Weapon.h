@@ -46,12 +46,12 @@ struct	S_WeaponStat
 
 class	Weapon
 {
-	public:
+	private:
 	std::string		Name {""};
 	S_WeaponStat	WeaponStat {};
 
 	public:
-	// Constructors
+	// ructors
 	Weapon();
 	Weapon(std::string NameToSet);
 	Weapon(std::string NameToSet, S_WeaponStat WeaponStatToSet);
@@ -66,6 +66,7 @@ class	Weapon
 	~Weapon();
 
 	// Getters
+	std::string		GetName();
 	double			GetRPM();
 	int				GetAmmoCount();
 	E_AmmoCaliber	GetAmmoCaliber();
@@ -77,19 +78,22 @@ class	Weapon
 	double			GetVerticalRecoil();
 	double			GetHorizontalRecoilVariation();
 	double			GetVerticalRecoilVariation();
+	double			GetHipfireSpread();
 	
 	// Setters
-	void			SetRPM(double RPMToSet) const;
-	void			SetAmmoCount(int AmmoCountToSet) const;
-	void			SetAmmoCaliber(E_AmmoCaliber AmmoCaliberToSet) const;
-	void			SetFireType(E_FireType FireTypeToSet) const;
-	void			SetRangeDropOff(S_RangeDropOff RangeDropOffToSet) const;
-	void			SetDamage(double DamageToSet) const;
-	void			SetBulletVelocity(double BulletVelocityToSet) const;
-	void			SetHorizontalRecoil(double HorizontalRecoilToSet) const;
-	void			SetVerticalRecoil(double VerticalRecoilToSet) const;
-	void			SetHorizontalRecoilVariation(double HorizontalRecoilVariationToSet) const;
-	void			SetVerticalRecoilVariation(double VerticalRecoilVariationToSet) const;
+	void			SetName(std::string NameToSet);
+	void			SetRPM(double RPMToSet);
+	void			SetAmmoCount(int AmmoCountToSet);
+	void			SetAmmoCaliber(E_AmmoCaliber AmmoCaliberToSet);
+	void			SetFireType(E_FireType FireTypeToSet);
+	void			SetRangeDropOff(S_RangeDropOff RangeDropOffToSet);
+	void			SetDamage(double DamageToSet);
+	void			SetBulletVelocity(double BulletVelocityToSet);
+	void			SetHorizontalRecoil(double HorizontalRecoilToSet);
+	void			SetVerticalRecoil(double VerticalRecoilToSet);
+	void			SetHorizontalRecoilVariation(double HorizontalRecoilVariationToSet);
+	void			SetVerticalRecoilVariation(double VerticalRecoilVariationToSet);
+	void			SetHipfireSpread(double HipfireSpreadToSet);
 
 	// Overloeaders
 };
