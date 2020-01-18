@@ -3,7 +3,7 @@ NAME = ModernWarfare
 
 # COMPILER
 CC = g++
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -std=c++17 -Wall -Wextra -Werror -g
 
 # DIRECTORIES
 SRCDIR = ./Srcs/
@@ -11,7 +11,8 @@ OBJDIR = ./Objs/
 INCDIR = ./Includes/
 
 # SRCS & OBJS
-SRCS = Main.cpp
+SRCS = Main.cpp \
+		Weapon.cpp
 OBJS = $(addprefix $(OBJDIR),$(SRCS:.cpp=.o))
 
 all: objs $(NAME)
