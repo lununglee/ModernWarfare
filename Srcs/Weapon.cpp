@@ -81,3 +81,4 @@ void			Weapon::SetHipfireSpread(double HipfireSpreadToSet) { WeaponStat.HipfireS
 /*********************************
 *          Overloaders           *
 *********************************/
+
