@@ -1,0 +1,24 @@
+[
+	{
+		"Name": "Kilo 141",
+		"WeaponStats":
+		{
+			"RPM": 750.0,
+			"AmmoCount": 30,
+			"AmmoCaliber": "FiveFiveSix_NATO",
+			"FireType": "Automatic",
+			"RangeDropOff":
+			{
+				"RangeDropOffBegin": 32.5,
+				"RangeDropOffend": 55.0
+			},
+			"Damage": 28.0,
+			"BulletVelocity": 900.0,
+			"HorizontalRecoil": 0.25,
+			"VerticalRecoil": 0.25,
+			"HorizontalRecoilVariation": 0.15,
+			"VerticalRecoilVariation": 0.15,
+			"HipfireSpread": 0.35
+		}
+	}
+]

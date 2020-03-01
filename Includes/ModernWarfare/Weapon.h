@@ -2,6 +2,8 @@
 #define _WEAPON_H_
 
 #include <string>
+#include <iostream>
+#include <iomanip>
 
 enum	E_FireType
 {
@@ -51,11 +53,12 @@ class	Weapon
 	S_WeaponStat	WeaponStat {};
 
 	public:
-	// ructors
+	// Constructors
 	Weapon();
 	Weapon(std::string NameToSet);
+	Weapon(S_WeaponStat WeaponStatToSet);
 	Weapon(std::string NameToSet, S_WeaponStat WeaponStatToSet);
-	
+
 	// Mover
 	Weapon(Weapon &&Rhs);
 
@@ -65,37 +68,43 @@ class	Weapon
 	// Destructor
 	~Weapon();
 
-	// Getters
-	std::string		GetName();
-	double			GetRPM();
-	int				GetAmmoCount();
-	E_AmmoCaliber	GetAmmoCaliber();
-	E_FireType		GetFireType();
-	S_RangeDropOff	GetRangeDropOff();
-	double			GetDamage();
-	double			GetBulletVelocity();
-	double			GetHorizontalRecoil();
-	double			GetVerticalRecoil();
-	double			GetHorizontalRecoilVariation();
-	double			GetVerticalRecoilVariation();
-	double			GetHipfireSpread();
-	
-	// Setters
-	void			SetName(std::string NameToSet);
-	void			SetRPM(double RPMToSet);
-	void			SetAmmoCount(int AmmoCountToSet);
-	void			SetAmmoCaliber(E_AmmoCaliber AmmoCaliberToSet);
-	void			SetFireType(E_FireType FireTypeToSet);
-	void			SetRangeDropOff(S_RangeDropOff RangeDropOffToSet);
-	void			SetDamage(double DamageToSet);
-	void			SetBulletVelocity(double BulletVelocityToSet);
-	void			SetHorizontalRecoil(double HorizontalRecoilToSet);
-	void			SetVerticalRecoil(double VerticalRecoilToSet);
-	void			SetHorizontalRecoilVariation(double HorizontalRecoilVariationToSet);
-	void			SetVerticalRecoilVariation(double VerticalRecoilVariationToSet);
-	void			SetHipfireSpread(double HipfireSpreadToSet);
+	// Basic getters
+	std::string			GetName() const;
+	S_WeaponStat		GetStats() const;
+	double				GetRPM() const;
+	int					GetAmmoCount() const;
+	E_AmmoCaliber		GetAmmoCaliber() const;
+	E_FireType			GetFireType() const;
+	S_RangeDropOff		GetRangeDropOff() const;
+	double				GetDamage() const;
+	double				GetBulletVelocity() const;
+	double				GetHorizontalRecoil() const;
+	double				GetVerticalRecoil() const;
+	double				GetHorizontalRecoilVariation() const;
+	double				GetVerticalRecoilVariation() const;
+	double				GetHipfireSpread() const;
+
+	// Basic setters
+	void				SetName(std::string NameToSet);
+	void				SetStats(S_WeaponStat StatsToSet);
+	void				SetRPM(double RPMToSet);
+	void				SetAmmoCount(int AmmoCountToSet);
+	void				SetAmmoCaliber(E_AmmoCaliber AmmoCaliberToSet);
+	void				SetFireType(E_FireType FireTypeToSet);
+	void				SetRangeDropOff(S_RangeDropOff RangeDropOffToSet);
+	void				SetDamage(double DamageToSet);
+	void				SetBulletVelocity(double BulletVelocityToSet);
+	void				SetHorizontalRecoil(double HorizontalRecoilToSet);
+	void				SetVerticalRecoil(double VerticalRecoilToSet);
+	void				SetHorizontalRecoilVariation(double HorizontalRecoilVariationToSet);
+	void				SetVerticalRecoilVariation(double VerticalRecoilVariationToSet);
+	void				SetHipfireSpread(double HipfireSpreadToSet);
 
 	// Overloeaders
+	Weapon				&operator=(S_WeaponStat Rhs);	// Use setters instead of overloading operator?
+	Weapon				&operator=(const Weapon &Rhs);
+	Weapon				&operator=(Weapon &&Rhs);
+	friend std::ostream	&operator<<(std::ostream &OS, const Weapon &Rhs);
 };
 
 #endif
